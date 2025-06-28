@@ -1,4 +1,16 @@
-param([switch]$Boss)
+param([switch]$Boss, [switch]$HSR) # adding some stuff for my campaign specifically :D
 
 $Name = Read-Host "What would you like to name the monster?"
-echo "The monster's name is $Name"
+# echo "The monster's name is $Name"
+$Size = Read-Host "What size is the monster?"
+$Category = Read-Host "What category would you classify the monster as?" # add examples
+$Alignment = Read-Host "What is the monsters alignment?"
+$HTML = "<!DOCTYPE html><html><head><title>$Name Stat Block</title><meta name='viewport' content='width=device-width, initial-scale=1' /><!--<link rel = 'stylesheet' href = 'style.css' /> embed style --></head><body><!--Stuff that will be edited is started with a '$'--><div id = 'stat-block'><h1>Monster Name</h1><i>$Size $Category, $Alignment</i><br />"
+
+$Armor_Class = Read-Host "What is the monsters Armor Class?"
+$Note = Read-Host "Armor Class note" # explain
+$Hp_Formula = Read-Host "Give the HP formula [examples: 2d4 + 4, 1d5 - 3, 1d5 + 2d4]"
+$Avg_Hp = 
+
+
+# "<b>Armor Class </b><span>$Armor_Class ($Note)</span> <br /><b>Hit Points </b><span>$Avg_Hp ($Hp_Formula)</span><br /><b>Speed </b><span>$Walk_Speed ft.<!--any other speeds + notes--></span><br /><hr /><table> <tr><th>STR</th><th>DEX</th><th>CON</th><th>INT</th><th>WIS</th><th>CHA</th></tr><tr><td>$Strength ($Strength_Modifier)</td><td>$Dexterity ($Dexterity_Modifier)</td><td>$Constitution ($Constitution_Modifier)</td><td>$Intelligence ($Intelligence_Modifier)</td><td>$Wisdom ($Wisdom_Modifier)</td><td>$Charisma ($Charisma_Modifier)</td></tr></table><hr /><!--Some of these only apply if they exist -- actually just put all of them in a list? and then have it generate them from the list???--><b>Condition Immunities</b><span><!--Loop through immunities here-->$Skills[$n].name '+'$Skills[$n].value</span><b>Skills</b><span><!--Loop through skills here-->$Skills[$n].name '+'$Skills[$n].value</span><b>Senses</b><span><!--Loop through senses here-->$Senses[$n] $Senses[$n].value</span><b>etc.</b><span><!--Loop through anything here atp there are so many addable things :/ -->$yap</span><b>Challenge</b><span>$Challenge_Level ($Xp XP)</span><hr /><p><b>$Traits[$n].name </b>$Traits[$n].Description</p> <!--only if applies--><h2 class = 'small-caps'>Actions</h2><div class = 'line'></div><p><!--if $multiattack.Has == true--><b>Multiattack </b>$Multiattack.Description</p><p><b>$Attacks[$n].name </b><i>$Attacks[$n].Sphere <!--zB Melee Weapon Attack--></i> +$Attacks[$n].to_Hit to hit, reach $Attacks[$n].Reach ft., $Attacks[$n].target. <i>Hit: </i>$Attacks[$n].Average_Damage ($Attacks[$n].Damage_Equation) $Attacks[$n].Type damage. </p> <!--repeat--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
