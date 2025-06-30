@@ -45,9 +45,13 @@ for ($i = 0; $i -lt $Avg_Hp_Operators.length; $i++) {
     $full_calculated_formula = "$full_calculated_formula" + $Avg_Hp_Operators[$i]
     $full_calculated_formula = "$full_calculated_formula" + $Avg_Hp_Array_ints[$i + 1]
 }
-echo $full_calculated_formula
 
-# Invoke-Expression 
+$Command = "$full_calculated_formula"
+Invoke-Expression $Command
+
+#Invoke-Expression "$full_calculated_formula"
+
+#Invoke-Expression 
 # my best idea here is invoke expression which i "shouldn't have"?
 
 
