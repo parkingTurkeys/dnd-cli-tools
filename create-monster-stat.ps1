@@ -64,6 +64,7 @@ while ((Read-Host "Any other speeds? [y/n]") -like "*y*") {
     $Speeds.Add([pscustomobject]@{Name = ""; Feet = "";})
     $Speeds[$i].Name = Read-Host "Speed Name"
     $Speeds[$i].Feet = Read-Host "Speed (in feet)"
+    $i++
 }
 
 
@@ -75,9 +76,9 @@ for ($i = 0; $i -lt $Speeds.Length; $i++) {
 }
 
 #echo $Speeds_Html
-!!! #> 
 
-echo "Ability Scores"
+
+echo "Ability Scores (0 to 30)"
 
 $Strength = Read-Host "Strength"
 $Dexterity = Read-Host "Dexterity"
@@ -86,8 +87,47 @@ $Intelligence = Read-Host "Intelligence"
 $Wisdom = Read-Host "Wisdom"
 $Charisma = Read-Host "Charisma"
 
-$Score_Key = [pscustomobject]@("0" = "-5";"1" = "-5";"2" = "-4";"3" = "-4";"4" = "-3";"5" = "-3";"6" = "-2";"7" = "-2";"8" = "-1";"9" = "-1";"10" = "+0";"11" = "+0";"12" = "+1";"13" = "+1";"14" = "+1";"10" = "+0";)
+$Strength_Modifier = ($Strength/2 - (($Strength/2) % 1)) - 5
+$Dexterity_Modifier = ($Dexterity/2 - (($Dexterity/2) % 1)) - 5
+$Constitution_Modifier = ($Constitution/2 - (($Constitution/2) % 1)) - 5
+$Intelligence_Modifier = ($Intelligence/2 - (($Intelligence/2) % 1)) - 5
+$Wisdom_Modifier = ($Wisdom/2 - (($Wisdom/2) % 1)) - 5
+$Charisma_Modifier = ($Charisma/2 - (($Charisma/2) % 1)) - 5
+
+$Modifiers = @($Strength_Modifier, $Dexterity_Modifier, $Constitution_Modifier, $Intelligence_Modifier, $Wisdom_Modifier, $Charisma_Modifier)
 
 
-# "Speed </b><span>$Speeds_Html</span><br /><hr /><table> <tr><th>STR</th><th>DEX</th><th>CON</th><th>INT</th><th>WIS</th><th>CHA</th></tr><tr><td>$Strength ($Strength_Modifier)</td><td>$Dexterity ($Dexterity_Modifier)</td><td>$Constitution ($Constitution_Modifier)</td><td>$Intelligence ($Intelligence_Modifier)</td><td>$Wisdom ($Wisdom_Modifier)</td><td>$Charisma ($Charisma_Modifier)</td></tr></table><hr /><!--Some of these only apply if they exist -- actually just put all of them in a list? and then have it generate them from the list???--><b>Condition Immunities</b><span><!--Loop through immunities here-->$Skills[$n].name '+'$Skills[$n].value</span><b>Skills</b><span><!--Loop through skills here-->$Skills[$n].name '+'$Skills[$n].value</span><b>Senses</b><span><!--Loop through senses here-->$Senses[$n] $Senses[$n].value</span><b>etc.</b><span><!--Loop through anything here atp there are so many addable things :/ -->$yap</span><b>Challenge</b><span>$Challenge_Level ($Xp XP)</span><hr /><p><b>$Traits[$n].name </b>$Traits[$n].Description</p> <!--only if applies--><h2 class = 'small-caps'>Actions</h2><div class = 'line'></div><p><!--if $multiattack.Has == true--><b>Multiattack </b>$Multiattack.Description</p><p><b>$Attacks[$n].name </b><i>$Attacks[$n].Sphere <!--zB Melee Weapon Attack--></i> +$Attacks[$n].to_Hit to hit, reach $Attacks[$n].Reach ft., $Attacks[$n].target. <i>Hit: </i>$Attacks[$n].Average_Damage ($Attacks[$n].Damage_Equation) $Attacks[$n].Type damage. </p> <!--repeat--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
+$Html = "$Html" +  "Speed </b><span>$Speeds_Html</span><br /><hr /><table> <tr><th>STR</th><th>DEX</th><th>CON</th><th>INT</th><th>WIS</th><th>CHA</th></tr><tr><td>$Strength ($Strength_Modifier)</td><td>$Dexterity ($Dexterity_Modifier)</td><td>$Constitution ($Constitution_Modifier)</td><td>$Intelligence ($Intelligence_Modifier)</td><td>$Wisdom ($Wisdom_Modifier)</td><td>$Charisma ($Charisma_Modifier)</td></tr></table><hr />"
+#> 
+
+echo "Other Stats (Condition/Damage Type Immunities/Resistances, Skills, Saving Throws)"
+
+$Stats = [System.Collections.Generic.List[object]]::new()
+$i = 2
+
+$Stats.Add([pscustomobject]@{Name = "Senses"; Value = "";})
+$Stats[0].Value = Read-Host "Senses [include Passive Perception]"
+$Stats.Add([pscustomobject]@{Name = "Languages"; Value = "";})
+$Stats[1].Value = Read-Host "Languages"
+
+while ((Read-Host "Any other stats? [y/n]") -like "*y*") {
+    $Stats.Add([pscustomobject]@{Name = ""; Value = "";})
+    $Stats[$i].Name = Read-Host "Stat Name"
+    $Stats[$i].Value = Read-Host "Value of Stat"
+    $i++
+}
+
+$Stats.Add([pscustomobject]@{Name = "Languages"; Value = "";})
+$Stats[$i + 1].Value = Read-Host "Challenge [+ amount of XP]"
+
+$Stats_Html = ""
+for ($n = 0; $n -lt $i + 1; $n++) {
+    $Stats_Html = $Stats_Html + "<b>" + $Stats[$n].Name + "</b><span> " + $Stats[$n].Value + "</span><br />"
+}
+
+$Html = "$Html $Stats_Html"
+
+
+
+# "<hr /><p><b>$Traits[$n].name </b>$Traits[$n].Description</p> <!--only if applies--><h2 class = 'small-caps'>Actions</h2><div class = 'line'></div><p><!--if $multiattack.Has == true--><b>Multiattack </b>$Multiattack.Description</p><p><b>$Attacks[$n].name </b><i>$Attacks[$n].Sphere <!--zB Melee Weapon Attack--></i> +$Attacks[$n].to_Hit to hit, reach $Attacks[$n].Reach ft., $Attacks[$n].target. <i>Hit: </i>$Attacks[$n].Average_Damage ($Attacks[$n].Damage_Equation) $Attacks[$n].Type damage. </p> <!--repeat--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
 echo $Html > output.html
