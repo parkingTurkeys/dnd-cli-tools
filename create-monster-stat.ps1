@@ -1,5 +1,5 @@
 param([switch]$Boss, [switch]$Hsr) # adding some stuff for my campaign specifically :D
-<#
+#<#
 $Name = Read-Host "What would you like to name the monster?"
 # echo "The monster's name is $Name"
 $Size = Read-Host "What size is the monster?"
@@ -117,17 +117,36 @@ while ((Read-Host "Any other stats? [y/n]") -like "*y*") {
     $i++
 }
 
-$Stats.Add([pscustomobject]@{Name = "Languages"; Value = "";})
-$Stats[$i + 1].Value = Read-Host "Challenge [+ amount of XP]"
+$Stats.Add([pscustomobject]@{Name = "Challenge"; Value = "";})
+$Stats[$i].Value = Read-Host "Challenge [+ amount of XP]"
 
 $Stats_Html = ""
-for ($n = 0; $n -lt $i + 1; $n++) {
+for ($n = 0; $n -lt $Stats.Length; $n++) {
     $Stats_Html = $Stats_Html + "<b>" + $Stats[$n].Name + "</b><span> " + $Stats[$n].Value + "</span><br />"
 }
 
+
 $Html = "$Html $Stats_Html"
 
+echo "Special Traits"
+
+$Traits = [System.Collections.Generic.List[object]]::new()
+$i = 0
+
+while ((Read-Host "Any other traits? [y/n]") -like "*y*") {
+    $Traits.Add([pscustomobject]@{Name = ""; Description = "";})
+    $Traits[$i].Name = Read-Host "Trait Name"
+    $Traits[$i].Description = Read-Host "Trait Description"
+    $i++
+}
+
+for ($n = 0; $n -lt $Traits.Length; $n++) {
+    $Traits_Html = $Traits_Html + "<b>" + $Traits[$n].Name + "</b><span> " + $Traits[$n].Value + "</span><br />"
+}
+
+$Html = "$Html<hr />$Traits_Html"
 
 
-# "<hr /><p><b>$Traits[$n].name </b>$Traits[$n].Description</p> <!--only if applies--><h2 class = 'small-caps'>Actions</h2><div class = 'line'></div><p><!--if $multiattack.Has == true--><b>Multiattack </b>$Multiattack.Description</p><p><b>$Attacks[$n].name </b><i>$Attacks[$n].Sphere <!--zB Melee Weapon Attack--></i> +$Attacks[$n].to_Hit to hit, reach $Attacks[$n].Reach ft., $Attacks[$n].target. <i>Hit: </i>$Attacks[$n].Average_Damage ($Attacks[$n].Damage_Equation) $Attacks[$n].Type damage. </p> <!--repeat--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
+
+# "<h2 class = 'small-caps'>Actions</h2><div class = 'line'></div><p><!--if $multiattack.Has == true--><b>Multiattack </b>$Multiattack.Description</p><p><b>$Attacks[$n].name </b><i>$Attacks[$n].Sphere <!--zB Melee Weapon Attack--></i> +$Attacks[$n].to_Hit to hit, reach $Attacks[$n].Reach ft., $Attacks[$n].target. <i>Hit: </i>$Attacks[$n].Average_Damage ($Attacks[$n].Damage_Equation) $Attacks[$n].Type damage. </p> <!--repeat--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
 echo $Html > output.html
