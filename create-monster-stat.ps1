@@ -146,7 +146,49 @@ for ($n = 0; $n -lt $Traits.Length; $n++) {
 
 $Html = "$Html<hr />$Traits_Html"
 
+echo "Actions! ...finally"
 
+$Actions = [System.Collections.Generic.List[object]]::new()
+$i = 0
 
-# "<h2 class = 'small-caps'>Actions</h2><div class = 'line'></div><p><!--if $multiattack.Has == true--><b>Multiattack </b>$Multiattack.Description</p><p><b>$Attacks[$n].name </b><i>$Attacks[$n].Sphere <!--zB Melee Weapon Attack--></i> +$Attacks[$n].to_Hit to hit, reach $Attacks[$n].Reach ft., $Attacks[$n].target. <i>Hit: </i>$Attacks[$n].Average_Damage ($Attacks[$n].Damage_Equation) $Attacks[$n].Type damage. </p> <!--repeat--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
+while ((Read-Host "Any other actions? [y/n]") -like "*y*") {
+    $Actions.Add([pscustomobject]@{Name = ""; Description = ""; ToHit = ""; OnHit = ""; Reach = ""; Target = ""})
+    $Actions[$i].Name = Read-Host "Action Name"
+    $Actions[$i].Description = Read-Host "Action Description"
+    $Actions[$i].ToHit = Read-Host "_ to hit?"
+    $Actions[$i].Reach = Read-Host "What is the reach in feet?"
+    $Actions[$i].Target = Read-Host "Target"
+    $Actions[$i].OnHit = Read-Host "What happens on a hit?"
+    $i++
+}
+
+for ($n = 0; $n -lt $Actions.Length; $n++) {
+    $Actions_Html = $Actions_Html + "<b>" + $Actions[$n].Name + "</b><span> " + $Actions[$n].Description + "</span>" + $Actions[$n].ToHit + "to hit, reach" + $Actions[$n].Reach + " ft.," + $Actions[$n].Target + ". <i>Hit</i>:" + $Actions[$n].OnHit + "<br />"
+}
+
+$Html = "$Html<hr />$Actions_Html"
+
+#
+
+if (Read-Host "Does this monster have reactions? [y/n]" -like "*y*") {
+    $ReActions = [System.Collections.Generic.List[object]]::new()
+    $i = 0
+
+    while ((Read-Host "Any other actions? [y/n]") -like "*y*") {
+        $ReActions.Add([pscustomobject]@{Name = ""; Description = ""})
+        $ReActions[$i].Name = Read-Host "Action Name"
+        $ReActions[$i].Description = Read-Host "Action Description"
+        $i++
+    }
+
+    for ($n = 0; $n -lt $Actions.Length; $n++) {
+        $ReActions_Html = $ReActions_Html + "<b>" + $ReActions[$n].Name + "</b><span> " + $ReActions[$n].Description + "</span>" + "<br />"
+    }
+
+    $Html = "$Html<hr />$ReActions_Html"
+}
+
+$Html = $Html + "</div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
+
+# "<!--attacks ig--><h2 class = 'small-caps'>Reactions</h2><div class = 'line'></div><p><b>$Reactions[$n].name </b>$Reactions[$n].Description</p><h2 class = 'small-caps'>Legendary Actions</h2><div class = 'line'></div><!--just put those here ig????? iiiiiiiiiiiiii        dddddddddddddddddd             k--></div></body><style>.small-caps {font-variant: small-caps;}#stat-block {background-color: #f6f8ca;}.line {background-color: #000000;height: 1px;padding: 0;margin: 0;}h2 {padding: 0;margin: 0;}</style></html>"
 echo $Html > output.html
