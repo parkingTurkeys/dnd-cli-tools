@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <div class = "page">
+            <header>
+            
+            <div class="tabley-header">
+                <span class = "metadata"><b>Class & Level:</b> $Class Lv$LV</span><span class = "metadata"><b>Background:</b> $Background</span><span class = "metadata"><b>Player Name:</b> $Player_Name</span><flex-break></flex-break>
+                <span class = "metadata"><b>Species:</b> $Species</span><span class = "metadata"><b>Alignment:</b> $Alignment</span><span class = "metadata"><b>Experience Points:</b> $EXP</span><br />
+            </div>
+            <span class = "header-side"><b>Character Name:</b> $Name</span>
+            </header>
+            <div class = "main-page">
+                <div class = "column">
+
+                </div>
+                <div class = "column">
+
+                </div>
+                <div class = "column"> 
+                    <div id = "personality" class = "boxes-on-bg" style = "flex: 1 0 auto"><div class = "box-on-bg">$Personality_Traits</div><div class = "box-on-bg">$Ideals</div><div class = "box-on-bg">$Bonds</div><div class = "box-on-bg">$Flaws</div></div>
+                    <div id = "traits"      class = "text"        style = "flex: 1 0 auto"><p>$InsertTraits</p></div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <style>
+        
+
+        .page {
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            min-height: 95vh;
+            border: 0.1rem solid #0f0f0f;
+        }
+
+        .metadata b {
+            font-variant: small-caps;
+        }
+
+        .header-side {
+            flex: 1;
+        }
+
+        .tabley-header {
+            width: 60%;
+            float:right;
+            display:flex;
+            flex-flow: row-reverse wrap;
+            background-color: #f0f0f0;
+            flex: 2;
+            height: 80%;
+            border-style: solid;
+            border-width: 0.5rem;
+            border-color: #0f0f0f;
+        }
+        flex-break {
+            width: 100%;
+        }
+        .tabley-header span.metadata{
+            height: 50%;
+            text-align:center;
+            flex: 1;
+            border-style: solid;
+            border-width: 0.1rem;
+            border-color: #0f0f0f;
+        }
+
+        header {
+            background-color: #9c9c9c;
+            height: 6rem;
+            display:flex;
+            flex-flow: row-reverse;
+
+        }
+
+        .main-page {
+            display:flex;
+            flex-flow: row;
+        }
+
+        .column {
+            flex: 1;
+            display:flex;
+            flex-flow: column ;
+        }
+
+        .text {
+            display: inline-block;
+            background-color: #f0f0f0;
+            border: 0.1rem solid #0f0f0f;
+            /*min-height: 100%;*/
+        }
+
+        .boxes-on-bg {
+            background-color: #9c9c9c;
+            display: flex;
+            flex-flow: column;
+        }
+
+        .box-on-bg {
+            background-color: #f0f0f0;
+            margin: 1rem;
+            padding:0.3rem;
+            border: 0.1rem solid #0f0f0f;
+            flex:1 0 auto;
+            min-height: 20%;
+        }
+    </style>
+</html>
