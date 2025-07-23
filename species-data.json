@@ -1,0 +1,14 @@
+[
+    {"Name": "Dwarf", "Has_Subtype": true, "Subtypes": [
+        {"Name": "Hill Dwarf", "Skill_Changes": {"WIS": 1}, "Stat_Changes": {"HP": 1}, "Traits": [{"Name" : "Dwarven Toughness", "Description": "Your hit point maximum increases by 1 every time you level up"}]},
+        {"Name": "Mountain Dwarf", "Skill_Changes": {"STR": 2}, "Proficiencies": ["Light Armor", "Medium Armor"]}
+    ]},
+    {"Name": "Elf"},
+    {"Name": "Halfling"},
+    {"Name": "Human"},
+    {"Name": "Dragonborn"},
+    {"Name": "Gnome"},
+    {"Name": "Half-Elf"},
+    {"Name": "Half-Orc"},
+    {"Name": "Tiefling"}
+]
