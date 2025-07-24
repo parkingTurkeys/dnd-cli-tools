@@ -1,14 +1,91 @@
 [
-    {"Name": "Dwarf", "Has_Subtype": true, "Subtypes": [
-        {"Name": "Hill Dwarf", "Skill_Changes": {"WIS": 1}, "Stat_Changes": {"HP": 1}, "Traits": [{"Name" : "Dwarven Toughness", "Description": "Your hit point maximum increases by 1 every time you level up"}]},
-        {"Name": "Mountain Dwarf", "Skill_Changes": {"STR": 2}, "Proficiencies": ["Light Armor", "Medium Armor"]}
-    ]},
-    {"Name": "Elf"},
-    {"Name": "Halfling"},
-    {"Name": "Human"},
-    {"Name": "Dragonborn"},
-    {"Name": "Gnome"},
-    {"Name": "Half-Elf"},
-    {"Name": "Half-Orc"},
-    {"Name": "Tiefling"}
+    {
+        "Name": "Dwarf",
+        "Has_Subtype": true,
+        "Subtypes": [
+            {
+                "Name": "Hill Dwarf",
+                "Skill_Changes": {
+                    "WIS": 1
+                },
+                "Stat_Changes": {
+                    "HP": 1
+                },
+                "Traits": [
+                    {
+                        "Name": "Dwarven Toughness",
+                        "Description": "Your hit point maximum increases by 1 every time you level up"
+                    }
+                ]
+            },
+            {
+                "Name": "Mountain Dwarf",
+                "Skill_Changes": {
+                    "STR": 2
+                },
+                "Proficiencies": [
+                    "Light Armor",
+                    "Medium Armor"
+                ]
+            }
+        ],
+        "Skill_Changes": {
+            "CON": 2
+        },
+        "Size": "Medium",
+        "Speed": 25,
+        "Proficiencies": [
+            "Battleaxe",
+            "Handaxe",
+            "Light Hammer",
+            "Warhammer",
+            [
+                "Smith's Tools",
+                "Brewer's Supplies",
+                "Mason's Tools"
+            ]
+        ],
+        "Traits": [
+            {
+                "Name": "Dwarven Resilience",
+                "Description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+            },
+            {
+                "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour.",
+                "Name": "Darkvision"
+            },
+            {
+                "Name": "Stonecunning",
+                "Description": "Whenever you make an Investigation (History) check related to the origin of stonework, you are considered proficient in the History skill and add *double* your proficiency bonus to the check."
+            }
+        ],
+        "Languages": [
+            "Common",
+            "Dwarvish"
+        ]
+    },
+    {
+        "Name": "Elf"
+    },
+    {
+        "Name": "Halfling"
+    },
+    {
+        "Name": "Human"
+    },
+    {
+        "Name": "Dragonborn"
+    },
+    {
+        "Name": "Gnome"
+    },
+    {
+        "Name": "Half-Elf"
+    },
+    {
+        "Name": "Half-Orc"
+    },
+    {
+        "Name": "Tiefling"
+    }
 ]
