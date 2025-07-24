@@ -65,7 +65,104 @@
         ]
     },
     {
-        "Name": "Elf"
+        "Name": "Elf",
+        "Has_Subtype": true,
+        "Subtypes": [
+            {
+                "Name": "High Elf",
+                "Skill_Changes": {
+                    "INT": 1
+                },
+                "Languages": [
+                   "*"
+                ],
+                "Traits": [
+                    {
+                        "Name": "Cantrip",
+                        "Description": "You know one cantrip of your choice from the wizard spellcasting list. Intelligence is your spellcasting ability for it."
+                    }
+                ],
+                "Proficiencies": [
+                    "Longbow",
+                    "Shortbow",
+                    "Longsword",
+                    "Shortsword"
+                ]
+            },
+            {
+                "Name": "Wood Elf",
+                "Skill_Changes": {
+                    "WIS": 1
+                },
+                "Stat_Changes": {
+                    "SPD": 35
+                },
+                "Proficiencies": [
+                    "Longbow",
+                    "Shortbow",
+                    "Longsword",
+                    "Shortsword"
+                ],
+                "Traits": [
+                    {
+                        "Name": "Mask of the Wild",
+                        "Description": "You can attempt to hide even when you are only lightly obscured by any *natural* phenomena."
+                    }
+                ]
+            },
+            {
+                "Name": "Dark Elf [Drow]",
+                "Skill_Changes": {
+                    "CHA": 1
+                },
+                "Stat_Changes": {
+                    "SPD": 35
+                },
+                "Proficiencies": [
+                    "Rapier",
+                    "Shortsword",
+                    "Hand Crossbow"
+                ],
+                "Traits": [
+                    {
+                        "Name": "Mask of the Wild",
+                        "Description": "You can attempt to hide even when you are only lightly obscured by any *natural* phenomena."
+                    },
+                    {
+                        "Name": "Superior Darkvision",
+                        "Description": "Your Darkvision has a radius of 120 feet."
+                    },
+                    {
+                        "Name": "Drow Magic",
+                        "Description": "You know the *dancing lights* cantrip. When you reach 3rd level, you can cast the *faerie fire* spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *darkness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                    }
+                ]
+            }
+            
+        ],
+        "Skill_Changes": {
+            "XYZ": 2
+        },
+        "Size": "",
+        "Speed": 30,
+        "Proficiencies": [
+            "",
+            [
+                "",
+                "",
+                ""
+            ]
+        ],
+        "Traits": [
+            {
+                "Name": "",
+                "Description": ""
+            }
+        ],
+        "Languages": [
+            "Common",
+            ""
+        ]
     },
     {
         "Name": "Halfling"
@@ -87,5 +184,58 @@
     },
     {
         "Name": "Tiefling"
+    },
+    {
+        "Name": "",
+        "Has_Subtype": true,
+        "Subtypes": [
+            {
+                "Name": "",
+                "Skill_Changes": {
+                    "XYZ": 1
+                },
+                "Stat_Changes": {
+                    "XYZ": 1
+                },
+                "Traits": [
+                    {
+                        "Name": "",
+                        "Description": ""
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Skill_Changes": {
+                    "": 1
+                },
+                "Proficiencies": [
+                    ""
+                ]
+            }
+        ],
+        "Skill_Changes": {
+            "XYZ": 2
+        },
+        "Size": "",
+        "Speed": 30,
+        "Proficiencies": [
+            "",
+            [
+                "",
+                "",
+                ""
+            ]
+        ],
+        "Traits": [
+            {
+                "Name": "",
+                "Description": ""
+            }
+        ],
+        "Languages": [
+            "Common",
+            ""
+        ]
     }
 ]
