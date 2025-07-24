@@ -173,35 +173,36 @@
         "Has_Subtype": true,
         "Subtypes": [
             {
-                "Name": "",
+                "Name": "Lightfoot",
                 "Skill_Changes": {
-                    "XYZ": 1
+                    "CHA": 1
                 },
-                "Stat_Changes": {
-                    "XYZ": 1
-                },
+                
                 "Traits": [
                     {
-                        "Name": "",
-                        "Description": ""
+                        "Name": "Naturally Stealthy",
+                        "Description": "You can attemüt to hide even when you are obscured only by a creature that is at least one size larger than you."
                     }
                 ]
             },
             {
-                "Name": "",
+                "Name": "Stout",
                 "Skill_Changes": {
-                    "": 1
+                    "CON": 1
                 },
-                "Proficiencies": [
-                    ""
+                "Traits": [
+                    {
+                        "Name": "Stout Resilience",
+                        "Description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+                    }
                 ]
             }
         ],
         "Skill_Changes": {
-            "XYZ": 2
+            "DEX": 2
         },
-        "Size": "",
-        "Speed": 30,
+        "Size": "Small",
+        "Speed": 25,
         "Proficiencies": [
             "",
             [
@@ -212,13 +213,21 @@
         ],
         "Traits": [
             {
-                "Name": "",
-                "Description": ""
+                "Name": "Brave",
+                "Description": "You have advantage on saving throws against being frightened."
+            },
+            {
+                "Name": "Halfling Nimbleness",
+                "Description": "You can move through the space of any creature that is of a size larger than yours."
+            },
+            {
+                "Name": "Lucky",
+                "Description": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
             }
         ],
         "Languages": [
             "Common",
-            ""
+            "Halfling"
         ]
     },
     {
