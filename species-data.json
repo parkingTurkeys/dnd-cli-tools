@@ -141,6 +141,63 @@
             
         ],
         "Skill_Changes": {
+            "DEX": 2
+        },
+        "Size": "Medium",
+        "Speed": 30,
+        "Skill_Proficiencies": [
+            "Perception"
+        ],
+        
+        "Traits": [
+            {
+                "Name": "Darkvision",
+                "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+            },
+            {
+                "Name": "Fey Ancestry",
+                "Description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+            },
+            {
+                "Name":"Trance",
+                "Description": "Your long rests take 4 hours instead of 8."
+            }
+        ],
+        "Languages": [
+            "Common",
+            "Elvish"
+        ]
+    },
+    {
+        "Name": "Halfling",
+        "Has_Subtype": true,
+        "Subtypes": [
+            {
+                "Name": "",
+                "Skill_Changes": {
+                    "XYZ": 1
+                },
+                "Stat_Changes": {
+                    "XYZ": 1
+                },
+                "Traits": [
+                    {
+                        "Name": "",
+                        "Description": ""
+                    }
+                ]
+            },
+            {
+                "Name": "",
+                "Skill_Changes": {
+                    "": 1
+                },
+                "Proficiencies": [
+                    ""
+                ]
+            }
+        ],
+        "Skill_Changes": {
             "XYZ": 2
         },
         "Size": "",
@@ -163,9 +220,6 @@
             "Common",
             ""
         ]
-    },
-    {
-        "Name": "Halfling"
     },
     {
         "Name": "Human"
