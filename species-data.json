@@ -308,11 +308,38 @@
         ],
         "Languages": [
             "Common",
-            ""
+            "Gnomish"
         ]
     },
     {
-        "Name": "Half-Elf"
+        "Name": "Half-Elf",
+        "Has_Subtype": true,
+        "Skill_Changes": {
+                    "CHA": 2,
+                    "*": [1,1]
+                },
+        "Size": "Medium",
+        "Speed": 30,
+        "Proficiencies": [
+            "*",
+            "*"
+            
+        ],
+        "Traits": [
+            {
+                "Name": "Fey Ancestry",
+                "Description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+            },
+            {
+                "Name": "Darkvision",
+                "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+            }
+        ],
+        "Languages": [
+            "Common",
+            "Elvish",
+            "*"
+        ]
     },
     {
         "Name": "Half-Orc"
