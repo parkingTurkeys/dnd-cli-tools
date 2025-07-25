@@ -374,7 +374,40 @@
         ]
     },
     {
-        "Name": "Tiefling"
+        "Name": "Tiefling",
+        "Has_Subtype": false,
+        "Skill_Changes": {
+            "CHA": 2,
+            "INT": 1
+        },
+        "Size": "Medium",
+        "Speed": 30,
+        "Proficiencies": [
+            "",
+            [
+                "",
+                "",
+                ""
+            ]
+        ],
+        "Traits": [
+            {
+                "Name": "Darkvision",
+                "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+            },
+            {
+                "Name": "Hellish Resistance",
+                "Description": "You have resistance to fire damage."
+            },
+            {
+                "Name": "Infernal Legacy",
+                "Description": "You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *darkness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+            }
+        ],
+        "Languages": [
+            "Common",
+            "Infernal"
+        ]
     },
     {
         "Name": "",
