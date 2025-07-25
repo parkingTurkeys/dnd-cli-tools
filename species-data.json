@@ -313,7 +313,7 @@
     },
     {
         "Name": "Half-Elf",
-        "Has_Subtype": true,
+        "Has_Subtype": false,
         "Skill_Changes": {
                     "CHA": 2,
                     "*": [1,1]
@@ -342,7 +342,36 @@
         ]
     },
     {
-        "Name": "Half-Orc"
+        "Name": "Half-Orc",
+        "Has_Subtype": false,
+        
+        "Skill_Changes": {
+            "STR": 2,
+            "CON": 1
+        },
+        "Size": "Medium",
+        "Speed": 30,
+        "Skill_Proficiencies": [
+            "Intimidation"
+        ],
+        "Traits": [
+            {
+                "Name": "Darkvision",
+                "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+            },
+            {
+                "Name": "Relentless Endurance",
+                "Description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+            },
+            {
+                "Name": "Savage Attacks",
+                "Description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+            }
+        ],
+        "Languages": [
+            "Common",
+            "Orc"
+        ]
     },
     {
         "Name": "Tiefling"
