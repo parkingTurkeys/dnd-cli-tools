@@ -252,7 +252,64 @@
         "Name": "Dragonborn"
     },
     {
-        "Name": "Gnome"
+        "Name": "Gnome",
+        "Has_Subtype": true,
+        "Subtypes": [
+            {
+                "Name": "Forest Gnome",
+                "Skill_Changes": {
+                    "DEX": 1
+                },
+                "Traits": [
+                    {
+                        "Name": "Natural Illusionist",
+                        "Description": "You know the *minor illusion* cantrip. Intelligence is your spellcasting ability for it."
+                    },
+                    {
+                        "Name": "Speak with Small Beasts",
+                        "Description": "You can communicate simple ideas with **Small** or smaller beasts."
+                    }
+                ]
+            },
+            {
+                "Name": "Rock Gnome",
+                "Skill_Changes": {
+                    "CON": 1
+                },
+                "Traits": [
+                    {
+                        "Name": "Artificer's Lore",
+                        "Description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add *double* your proficiency bonus to the check."
+                    },
+                    {
+                        "Name": "Tinker",
+                        "Description": "Using artisan's tools, you can spend 1 hour and 10gp worth of materials to construct a Tiny clockwork device [AC 5, 1 HP]. The device ceases to function after 24 hours [unless you spend 1 hour repairing it to keep the device functioning], or when"
+                    }
+                ],
+                "Proficiencies": [
+                    "Artisan's Tools"
+                ]
+            }
+        ],
+        "Skill_Changes": {
+            "INT": 2
+        },
+        "Size": "Small",
+        "Speed": 25,
+        "Traits": [
+            {
+                "Name": "Darkvision",
+                "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+            },
+            {
+                "Name": "Gnome Cunning",
+                "Description": "You have advantage on all Intelligence, Wisdom, and Charisma savinge throws against magic."
+            }
+        ],
+        "Languages": [
+            "Common",
+            ""
+        ]
     },
     {
         "Name": "Half-Elf"
