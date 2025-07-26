@@ -65,9 +65,8 @@ if  ($Species_Data.Has_Subtype) {
 Answer"
 
 $Class_Data = $Class_Data[$indexy]
-$arraya = $Class_Data.Equipment.Length -split " "
-[int]$arraya = $arraya[0]
-for ($i = 0; $i -lt $arraya, $i++) {
+
+for ($i = 0; $i -lt $Class_Data.Equipment.Length; $i++) {
     if ($Class_Data.Equipment[$i].GetType().Name -eq "Object[]") {
         # if it's an array
         # turn both into strings
