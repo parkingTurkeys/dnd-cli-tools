@@ -1,5 +1,6 @@
 [
     {
+        "Has_Spellcasting": false,
         "Name": "Barbarian",
         "Hit Die": 12,
         "Equipment": [
@@ -76,6 +77,9 @@
         ]
     },
     {
+        "Has_Spellcasting": true,
+        "Spells": 4,
+        "Cantrips":2,
         "Name": "",
         "Hit Die": 0,
         "Equipment": [
