@@ -18,6 +18,8 @@ $Class_Data = Get-Content "class_data.json"
 $Class_Data = $Class_Data | ConvertFrom-Json 
 $Weapons = [System.Collections.Generic.List[object]]::new()
 $Inventory = [System.Collections.Generic.List[object]]::new()
+$Proficiencies =  [System.Collections.Generic.List[object]]::new()
+$Skill_Proficiencies =  [System.Collections.Generic.List[object]]::new()
 <#
 echo $Class_Data[0].Equipment[2].GetType()
 if ($Class_Data[0].Equipment[0].GetType().Name -eq "Object[]") {echo "hi"}
@@ -125,12 +127,35 @@ for ($i = 0; $i -lt $Class_Data.Inventory.Length; $i++) {
         1: $second_choice
         Answer"
         for ($n = 0; $n -lt $Class_Data.Equipment[$i][$indexy].Amount; $n++) {
-            $Weapons.Add($Class_Data.Equipment[$i][$indexy].Weapon)
+            $Inventory.Add($Class_Data.Equipment[$i][$indexy].Weapon)
         }
     } else {
         for ($n = 0; $n -lt $Class_Data.Inventory[$i].Amount; $n++) {
-            $Weapons.Add($Class_Data.Inventory[$i].Weapon)
+            $Inventory.Add($Class_Data.Inventory[$i].Weapon)
         }
     }
 
+}
+
+for ($i = 0; $i -lt $Class_Data.Proficiencies.Length; $i++) {
+    if ($Proficiencies -contains $Class_Data.Proficiencies[$i]) {} else {
+        $Proficiencies.Add($Class_Data.Proficiencies[$i])
+    }
+}
+
+for ($i = 0; $i -lt $Class_Data.Skill_Proficiencies.Length; $i++) {
+    if ($Class_Data.Skill_Proficiencies[$i].GetType().Name -eq "Object[]") {
+        #if array
+        $formatted = ""
+        for ($n = 0; $n -lt $Class_Data.Skill_Proficiencies[$i].Length; $n++) {
+        $temp = $Class_Data.Skill_Proficiencies[$i][$n]
+        $formatted = "$formatted[$n]:$temp
+        "
+        }
+        [int]$indexy = Read-Host "Which of these proficiencies do you want?
+        $formatted Answer" 
+    }
+    if ($Skill_Proficiencies -contains $Class_Data.Skill_Proficiencies[$i]) {} else {
+        $Skill_Proficiencies.Add($Class_Data.Skill_Proficiencies[$i])
+    }
 }
