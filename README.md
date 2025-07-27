@@ -3,7 +3,7 @@ Download Powershell:
 [Download from Github](https://github.com/PowerShell/PowerShell/releases)
 On Windows: `winget install --id Microsoft.PowerShell --source winget`
 
-Run by running .\create-monster-stat.ps1 in Powershell.
+
 
 <div align="center">
   <a href="https://shipwrecked.hackclub.com/?t=ghrm" target="_blank">
@@ -12,3 +12,9 @@ Run by running .\create-monster-stat.ps1 in Powershell.
          style="width: 35%;">
   </a>
 </div>
+
+## Creating Monster Stat Blocks
+
+! Don't do this if you don't have experience & the books, it's meant for if you know what you're doing!!!
+
+Open Powershell, navigate to the directory the files are stored in, and run `.\cr

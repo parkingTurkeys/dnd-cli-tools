@@ -16,6 +16,8 @@ $number_words = @("zero", "one", "two", "three", "four", "five", "six", "seven",
 
 $Class_Data = Get-Content "class_data.json"
 $Class_Data = $Class_Data | ConvertFrom-Json 
+$Weapons = [System.Collections.Generic.List[object]]::new()
+$Inventory = [System.Collections.Generic.List[object]]::new()
 <#
 echo $Class_Data[0].Equipment[2].GetType()
 if ($Class_Data[0].Equipment[0].GetType().Name -eq "Object[]") {echo "hi"}
@@ -70,9 +72,65 @@ for ($i = 0; $i -lt $Class_Data.Equipment.Length; $i++) {
     if ($Class_Data.Equipment[$i].GetType().Name -eq "Object[]") {
         # if it's an array
         # turn both into strings
-        $first_choice = $number_words[$Class_Data.Equipment[$i][0].Amount] + " " + $Class_Data.Equipment[$i][0].Weapon
+        if ($Class_Data.Equipment[$i][0].Weapon -like "*/*") {
+            $temp = ""
+            #echo "WILDCARDS!!!!"
+            $tempy = $Class_Data.Equipment[$i][0].Weapon -split '/'
+            for ($n = 1; $n -lt $tempy.Length; $n++){
+                $temp = $temp + " " + $tempy[$n]
+            }
+            $temp = $temp + "weapon"
+        } else {$temp = $Class_Data.Equipment[$i][0].Weapon}
+        $first_choice = $number_words[$Class_Data.Equipment[$i][0].Amount] + " " + $temp.ToLower()
         if ($Class_Data.Equipment[$i][0].Amount -gt 1) {$first_choice = $first_choice + "s"}
-        $second_choice = $number_words[$Class_Data.Equipment[$i][0].Amount] + " " + $Class_Data.Equipment[$i][0].Weapon
-        if ($Class_Data.Equipment[$i][0].Amount -gt 1) {$second_choice = $second_choice + "s"}
+        if ($Class_Data.Equipment[$i][1].Weapon -like "*/*") {
+            $temp = ""
+            #echo "WILDCARDS!!!!"
+            $tempy = $Class_Data.Equipment[$i][1].Weapon -split "/"
+            #echo $tempy
+            for ($n = 1; $n -lt $tempy.Length; $n++){
+                $temp = $temp + " " + $tempy[$n]
+            }
+            $temp = $temp + " weapon"
+        } else {$temp = $Class_Data.Equipment[$i][0].Weapon}
+        $second_choice = $number_words[$Class_Data.Equipment[$i][1].Amount] + " " + $temp.ToLower()
+        if ($Class_Data.Equipment[$i][1].Amount -gt 1) {$second_choice = $second_choice + "s"}
+        [int]$indexy = Read-Host "Choose [enter the number]:
+        0: $first_choice
+        1: $second_choice
+        Answer"
+        for ($n = 0; $n -lt $Class_Data.Equipment[$i][$indexy].Amount; $n++) {
+            $Weapons.Add($Class_Data.Equipment[$i][$indexy].Weapon)
+        }
+    } else {
+        for ($n = 0; $n -lt $Class_Data.Equipment[$i].Amount; $n++) {
+            $Weapons.Add($Class_Data.Equipment[$i].Weapon)
+        }
     }
+
+}
+
+for ($i = 0; $i -lt $Class_Data.Inventory.Length; $i++) {
+    if ($Class_Data.Inventory[$i].GetType().Name -eq "Object[]") {
+        # if it's an array
+        # turn both into strings
+        $temp = $Class_Data.Equipment[$i][0].Weapon
+        $first_choice = $number_words[$Class_Data.Equipment[$i][0].Amount] + " " + $temp.ToLower()
+        if ($Class_Data.Equipment[$i][0].Amount -gt 1) {$first_choice = $first_choice + "s"}
+        $temp = $Class_Data.Equipment[$i][0].Weapon
+        $second_choice = $number_words[$Class_Data.Equipment[$i][1].Amount] + " " + $temp.ToLower()
+        if ($Class_Data.Equipment[$i][1].Amount -gt 1) {$second_choice = $second_choice + "s"}
+        [int]$indexy = Read-Host "Choose [enter the number]:
+        0: $first_choice
+        1: $second_choice
+        Answer"
+        for ($n = 0; $n -lt $Class_Data.Equipment[$i][$indexy].Amount; $n++) {
+            $Weapons.Add($Class_Data.Equipment[$i][$indexy].Weapon)
+        }
+    } else {
+        for ($n = 0; $n -lt $Class_Data.Inventory[$i].Amount; $n++) {
+            $Weapons.Add($Class_Data.Inventory[$i].Weapon)
+        }
+    }
+
 }
