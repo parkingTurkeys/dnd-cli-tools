@@ -1,5 +1,4 @@
-{
-    "body": [
+[
         {
             "Name": "Dwarf",
             "Has_Subtype": true,
@@ -409,4 +408,3 @@
             ]
         }
     ]
-}

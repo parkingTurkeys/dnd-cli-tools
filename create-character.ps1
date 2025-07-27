@@ -19,7 +19,8 @@ $Class_Data = $Class_Data | ConvertFrom-Json
 $Weapons = [System.Collections.Generic.List[object]]::new()
 $Inventory = [System.Collections.Generic.List[object]]::new()
 $Proficiencies =  [System.Collections.Generic.List[object]]::new()
-$Skill_Proficiencies =  [System.Collections.Generic.List[object]]::new()
+$Skill_Proficiencies =  [System.Collections.Generic.List[object]]::new()#
+$Traits = [System.Collections.Generic.List[object]]::new()
 <#
 echo $Class_Data[0].Equipment[2].GetType()
 if ($Class_Data[0].Equipment[0].GetType().Name -eq "Object[]") {echo "hi"}
@@ -38,7 +39,7 @@ if ($Class_Data[0].Equipment[0].GetType().Name -eq "Object[]") {echo "hi"}
 8: Tiefling
 Answer"
 
-$Species_Data = $Species_Data.body[$indexy]
+$Species_Data = $Species_Data[$indexy]
 
 if  ($Species_Data.Has_Subtype) {
     for ($i = 0; $i -lt $Species_Data.Subtypes.length; $i++) {
@@ -51,6 +52,17 @@ if  ($Species_Data.Has_Subtype) {
     $Has_Subtype = true
     $Subtype_Data =  $Species_Data.Subtypes[$indexy]
 }
+
+for ($i = 0; $i -lt $Species_Data.Traits.Length; $i++) {
+    $Traits.Add($Species_Data.Traits[$i]);
+}
+
+if ($Has_Subtype) {
+    for ($i = 0; $i -lt $Subtype_Data.Traits.Length; $i++) {
+        $Traits.Add($Subtype_Data.Traits[$i]);
+    }
+}
+
 #>
 
 [int]$indexy = Read-Host "What class do you want your character to be? 
@@ -158,4 +170,8 @@ for ($i = 0; $i -lt $Class_Data.Skill_Proficiencies.Length; $i++) {
     if ($Skill_Proficiencies -contains $Class_Data.Skill_Proficiencies[$i]) {} else {
         $Skill_Proficiencies.Add($Class_Data.Skill_Proficiencies[$i])
     }
+}
+
+for ($i = 0; $i -lt $Class_Data.Traits.Length; $i++) {
+    $Traits.Add($Class_Data.Traits[$i]);
 }
