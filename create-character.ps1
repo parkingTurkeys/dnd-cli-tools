@@ -17,10 +17,18 @@ $number_words = @("zero", "one", "two", "three", "four", "five", "six", "seven",
 $Class_Data = Get-Content "class_data.json"
 $Class_Data = $Class_Data | ConvertFrom-Json 
 $Weapons = [System.Collections.Generic.List[object]]::new()
+
+$Attacks = [System.Collections.Generic.List[object]]::new()
 $Inventory = [System.Collections.Generic.List[object]]::new()
 $Proficiencies =  [System.Collections.Generic.List[object]]::new()
 $Skill_Proficiencies =  [System.Collections.Generic.List[object]]::new()#
 $Traits = [System.Collections.Generic.List[object]]::new()
+
+$Suggested_Scores = @("15","14","13","12","10","8")
+$Scores = [pscustomobject]@{STR = ""; DEX = ""; WIS = ""; CON = ""; INT = ""; CHA = "";}
+$Score_Modifiers = [pscustomobject]@{STR = ""; DEX = ""; WIS = ""; CON = ""; INT = ""; CHA = "";}
+
+
 <#
 echo $Class_Data[0].Equipment[2].GetType()
 if ($Class_Data[0].Equipment[0].GetType().Name -eq "Object[]") {echo "hi"}
@@ -63,7 +71,7 @@ if ($Has_Subtype) {
     }
 }
 
-#>
+
 
 [int]$indexy = Read-Host "What class do you want your character to be? 
 0: Barbarian
@@ -174,4 +182,40 @@ for ($i = 0; $i -lt $Class_Data.Skill_Proficiencies.Length; $i++) {
 
 for ($i = 0; $i -lt $Class_Data.Traits.Length; $i++) {
     $Traits.Add($Class_Data.Traits[$i]);
+}
+#>
+echo "Each score [Strength, Dexterity, Constitution, Intelligence, Wisdom, and Charisma] gets one of these scores : $Suggested_Scores "
+$temporary = @("STR", "DEX", "CON", "INT", "WIS", "CHA")
+for ($i = 0; $i -lt $Suggested_Scores.Length; $i++) {
+    
+    [string]$temp = $Suggested_Scores[$i]
+    echo $temp
+    <#[0]: Strength
+    [1]: Dexterity
+    [2]: Constitution
+    [3]: Intelligence
+    [4]: Wisdom
+    [5]: Charisma#>
+    $formatted = ""
+    for ($n = 0; $n -lt $temporary.Length; $n++) { # weird bug on last one for some reason :/, removing last line for that go-through fixes it but like noooooooooo
+        $formatted = "$formatted[$n]:"
+        $tempy = $temporary[$n]
+        $formatted = "$formatted $tempy
+        "
+    }
+    [int]$indexy = Read-Host "Which ability would you like to have a score of $temp ?
+    $formatted\Answer"
+    
+    $temp = $temporary[$indexy]
+
+    $Scores.$temp = $Suggested_Scores[$i]
+    # https://www.reddit.com/r/PowerShell/comments/10wrxbr/underrated_way_of_removing_item_from_array/
+    if ($i -ne 4) {$temporary = $temporary | Where-Object -FilterScript {$_ -ne $temp}} 
+}
+
+$temporary = @("STR", "DEX", "CON", "INT", "WIS", "CHA")
+for ($i = 0; $i -lt $temporary.Length; $i++) {
+    #$mod/2 - (($mod/2) % 1)) - 5
+    [int]$temp = $Scores.$temporary[$i]
+    $Score_Modifiers.$temporary[$i] = $temp/2 - (($temp/2) % 1) - 5
 }
