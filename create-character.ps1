@@ -25,7 +25,7 @@ $Skill_Proficiencies =  [System.Collections.Generic.List[object]]::new()#
 $Traits = [System.Collections.Generic.List[object]]::new()
 
 $Suggested_Scores = @("15","14","13","12","10","8")
-$Scores = [pscustomobject]@{STR = ""; DEX = ""; WIS = ""; CON = ""; INT = ""; CHA = "";}
+$Scores = [pscustomobject]@{"STR" = ""; "DEX" = ""; "WIS" = ""; "CON" = ""; "INT" = ""; "CHA" = "";}
 $Score_Modifiers = [pscustomobject]@{STR = ""; DEX = ""; WIS = ""; CON = ""; INT = ""; CHA = "";}
 
 
@@ -213,9 +213,12 @@ for ($i = 0; $i -lt $Suggested_Scores.Length; $i++) {
     if ($i -ne 4) {$temporary = $temporary | Where-Object -FilterScript {$_ -ne $temp}} 
 }
 
-$temporary = @("STR", "DEX", "CON", "INT", "WIS", "CHA")
-for ($i = 0; $i -lt $temporary.Length; $i++) {
+# echo $Scores
+
+$temporaryagain = @("STR", "DEX", "CON", "INT", "WIS", "CHA")
+echo $Scores.$temporaryagain[0]
+for ($i = 0; $i -lt $temporaryagain.Length; $i++) {
     #$mod/2 - (($mod/2) % 1)) - 5
-    [int]$temp = $Scores.$temporary[$i]
-    $Score_Modifiers.$temporary[$i] = $temp/2 - (($temp/2) % 1) - 5
+    [int]$temp = $Scores.$temporaryagain[$i]
+    $Score_Modifiers.$temporaryagain[$i] = $temp/2 - (($temp/2) % 1) - 5
 }
