@@ -1,0 +1,410 @@
+[
+        {
+            "Name": "Dwarf",
+            "Has_Subtype": true,
+            "Subtypes": [
+                {
+                    "Name": "Hill Dwarf",
+                    "Skill_Changes": {
+                        "WIS": 1
+                    },
+                    "Stat_Changes": {
+                        "HP": 1
+                    },
+                    "Traits": [
+                        {
+                            "Name": "Dwarven Toughness",
+                            "Description": "Your hit point maximum increases by 1 every time you level up"
+                        }
+                    ]
+                },
+                {
+                    "Name": "Mountain Dwarf",
+                    "Skill_Changes": {
+                        "STR": 2
+                    },
+                    "Proficiencies": [
+                        "Light Armor",
+                        "Medium Armor"
+                    ]
+                }
+            ],
+            "Skill_Changes": {
+                "CON": 2
+            },
+            "Size": "Medium",
+            "Speed": 25,
+            "Proficiencies": [
+                "Battleaxe",
+                "Handaxe",
+                "Light Hammer",
+                "Warhammer",
+                [
+                    "Smith's Tools",
+                    "Brewer's Supplies",
+                    "Mason's Tools"
+                ]
+            ],
+            "Traits": [
+                {
+                    "Name": "Dwarven Resilience",
+                    "Description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+                },
+                {
+                    "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour.",
+                    "Name": "Darkvision"
+                },
+                {
+                    "Name": "Stonecunning",
+                    "Description": "Whenever you make an Investigation (History) check related to the origin of stonework, you are considered proficient in the History skill and add *double* your proficiency bonus to the check."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Dwarvish"
+            ]
+        },
+        {
+            "Name": "Elf",
+            "Has_Subtype": true,
+            "Subtypes": [
+                {
+                    "Name": "High Elf",
+                    "Skill_Changes": {
+                        "INT": 1
+                    },
+                    "Languages": [
+                        "*"
+                    ],
+                    "Traits": [
+                        {
+                            "Name": "Cantrip",
+                            "Description": "You know one cantrip of your choice from the wizard spellcasting list. Intelligence is your spellcasting ability for it."
+                        }
+                    ],
+                    "Proficiencies": [
+                        "Longbow",
+                        "Shortbow",
+                        "Longsword",
+                        "Shortsword"
+                    ]
+                },
+                {
+                    "Name": "Wood Elf",
+                    "Skill_Changes": {
+                        "WIS": 1
+                    },
+                    "Stat_Changes": {
+                        "SPD": 35
+                    },
+                    "Proficiencies": [
+                        "Longbow",
+                        "Shortbow",
+                        "Longsword",
+                        "Shortsword"
+                    ],
+                    "Traits": [
+                        {
+                            "Name": "Mask of the Wild",
+                            "Description": "You can attempt to hide even when you are only lightly obscured by any *natural* phenomena."
+                        }
+                    ]
+                },
+                {
+                    "Name": "Dark Elf [Drow]",
+                    "Skill_Changes": {
+                        "CHA": 1
+                    },
+                    "Stat_Changes": {
+                        "SPD": 35
+                    },
+                    "Proficiencies": [
+                        "Rapier",
+                        "Shortsword",
+                        "Hand Crossbow"
+                    ],
+                    "Traits": [
+                        {
+                            "Name": "Mask of the Wild",
+                            "Description": "You can attempt to hide even when you are only lightly obscured by any *natural* phenomena."
+                        },
+                        {
+                            "Name": "Superior Darkvision",
+                            "Description": "Your Darkvision has a radius of 120 feet."
+                        },
+                        {
+                            "Name": "Drow Magic",
+                            "Description": "You know the *dancing lights* cantrip. When you reach 3rd level, you can cast the *faerie fire* spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *darkness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                        }
+                    ]
+                }
+            ],
+            "Skill_Changes": {
+                "DEX": 2
+            },
+            "Size": "Medium",
+            "Speed": 30,
+            "Skill_Proficiencies": [
+                "Perception"
+            ],
+            "Traits": [
+                {
+                    "Name": "Darkvision",
+                    "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+                },
+                {
+                    "Name": "Fey Ancestry",
+                    "Description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+                },
+                {
+                    "Name": "Trance",
+                    "Description": "Your long rests take 4 hours instead of 8."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Elvish"
+            ]
+        },
+        {
+            "Name": "Halfling",
+            "Has_Subtype": true,
+            "Subtypes": [
+                {
+                    "Name": "Lightfoot",
+                    "Skill_Changes": {
+                        "CHA": 1
+                    },
+                    "Traits": [
+                        {
+                            "Name": "Naturally Stealthy",
+                            "Description": "You can attemüt to hide even when you are obscured only by a creature that is at least one size larger than you."
+                        }
+                    ]
+                },
+                {
+                    "Name": "Stout",
+                    "Skill_Changes": {
+                        "CON": 1
+                    },
+                    "Traits": [
+                        {
+                            "Name": "Stout Resilience",
+                            "Description": "You have advantage on saving throws against poison, and you have resistance against poison damage."
+                        }
+                    ]
+                }
+            ],
+            "Skill_Changes": {
+                "DEX": 2
+            },
+            "Size": "Small",
+            "Speed": 25,
+            "Proficiencies": [
+                "",
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            ],
+            "Traits": [
+                {
+                    "Name": "Brave",
+                    "Description": "You have advantage on saving throws against being frightened."
+                },
+                {
+                    "Name": "Halfling Nimbleness",
+                    "Description": "You can move through the space of any creature that is of a size larger than yours."
+                },
+                {
+                    "Name": "Lucky",
+                    "Description": "When you roll a 1 on the d20 for an attack roll, ability check, or saving throw, you can reroll the die and must use the new roll."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Halfling"
+            ]
+        },
+        {
+            "Name": "Human",
+            "Has_Subtype": false,
+            "Skill_Changes": {
+                "DEX": 1,
+                "CHA": 1,
+                "CON": 1,
+                "INT": 1,
+                "STR": 1,
+                "WIS": 1
+            },
+            "Size": "Medium",
+            "Speed": 30,
+            "Languages": [
+                "Common",
+                "*"
+            ]
+        },
+        {
+            "Name": "Dragonborn"
+        },
+        {
+            "Name": "Gnome",
+            "Has_Subtype": true,
+            "Subtypes": [
+                {
+                    "Name": "Forest Gnome",
+                    "Skill_Changes": {
+                        "DEX": 1
+                    },
+                    "Traits": [
+                        {
+                            "Name": "Natural Illusionist",
+                            "Description": "You know the *minor illusion* cantrip. Intelligence is your spellcasting ability for it."
+                        },
+                        {
+                            "Name": "Speak with Small Beasts",
+                            "Description": "You can communicate simple ideas with **Small** or smaller beasts."
+                        }
+                    ]
+                },
+                {
+                    "Name": "Rock Gnome",
+                    "Skill_Changes": {
+                        "CON": 1
+                    },
+                    "Traits": [
+                        {
+                            "Name": "Artificer's Lore",
+                            "Description": "Whenever you make an Intelligence (History) check related to magic items, alchemical objects, or technological devices, you can add *double* your proficiency bonus to the check."
+                        },
+                        {
+                            "Name": "Tinker",
+                            "Description": "Using artisan's tools, you can spend 1 hour and 10gp worth of materials to construct a Tiny clockwork device [AC 5, 1 HP]. The device ceases to function after 24 hours [unless you spend 1 hour repairing it to keep the device functioning], or when"
+                        }
+                    ],
+                    "Proficiencies": [
+                        "Artisan's Tools"
+                    ]
+                }
+            ],
+            "Skill_Changes": {
+                "INT": 2
+            },
+            "Size": "Small",
+            "Speed": 25,
+            "Traits": [
+                {
+                    "Name": "Darkvision",
+                    "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+                },
+                {
+                    "Name": "Gnome Cunning",
+                    "Description": "You have advantage on all Intelligence, Wisdom, and Charisma savinge throws against magic."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Gnomish"
+            ]
+        },
+        {
+            "Name": "Half-Elf",
+            "Has_Subtype": false,
+            "Skill_Changes": {
+                "CHA": 2,
+                "*": [
+                    1,
+                    1
+                ]
+            },
+            "Size": "Medium",
+            "Speed": 30,
+            "Proficiencies": [
+                "*",
+                "*"
+            ],
+            "Traits": [
+                {
+                    "Name": "Fey Ancestry",
+                    "Description": "You have advantage on saving throws against being charmed, and magic can't put you to sleep."
+                },
+                {
+                    "Name": "Darkvision",
+                    "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Elvish",
+                "*"
+            ]
+        },
+        {
+            "Name": "Half-Orc",
+            "Has_Subtype": false,
+            "Skill_Changes": {
+                "STR": 2,
+                "CON": 1
+            },
+            "Size": "Medium",
+            "Speed": 30,
+            "Skill_Proficiencies": [
+                "Intimidation"
+            ],
+            "Traits": [
+                {
+                    "Name": "Darkvision",
+                    "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+                },
+                {
+                    "Name": "Relentless Endurance",
+                    "Description": "When you are reduced to 0 hit points but not killed outright, you can drop to 1 hit point instead. You can't use this feature again until you finish a long rest."
+                },
+                {
+                    "Name": "Savage Attacks",
+                    "Description": "When you score a critical hit with a melee weapon attack, you can roll one of the weapon's damage dice one additional time and add it to the extra damage of the critical hit."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Orc"
+            ]
+        },
+        {
+            "Name": "Tiefling",
+            "Has_Subtype": false,
+            "Skill_Changes": {
+                "CHA": 2,
+                "INT": 1
+            },
+            "Size": "Medium",
+            "Speed": 30,
+            "Proficiencies": [
+                "",
+                [
+                    "",
+                    "",
+                    ""
+                ]
+            ],
+            "Traits": [
+                {
+                    "Name": "Darkvision",
+                    "Description": "Within 60 feet: You can see in dim light as if it were bright light, and in darkness as if it were dim light without colour."
+                },
+                {
+                    "Name": "Hellish Resistance",
+                    "Description": "You have resistance to fire damage."
+                },
+                {
+                    "Name": "Infernal Legacy",
+                    "Description": "You know the *thaumaturgy* cantrip. When you reach 3rd level, you can cast the *hellish rebuke* spell as a 2nd-level spell once with this trait and regain the ability to do so when you finish a long rest. When you reach 5th level, you can cast the *darkness* spell once with this trait and regain the ability to do so when you finish a long rest. Charisma is your spellcasting ability for these spells."
+                }
+            ],
+            "Languages": [
+                "Common",
+                "Infernal"
+            ]
+        }
+    ]

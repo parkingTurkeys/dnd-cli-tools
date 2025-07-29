@@ -1,0 +1,28 @@
+# $Name
+Class: $Class LV.1
+Species: $Species \[$Subtype\]
+Experience Points: 0
+Hit Die: 
+
+# Ability Scores
+Strength: $Scores.STR
+Dexterity: $Scores.DEX
+Constitution: $Scores.CON
+Intelligence: $Scores.INT
+Wisdom: $Scores.WIS
+Charisma: $Scores.CHA
+
+# Proficiencies
+$Proficiencies_All
+
+# Skill Proficiencies
+$Proficiencies_Skills_All
+
+# Weapons
+$all_the_freaking_weapons
+
+# Inventory
+$Inventory_All
+
+# Traits
+$Traits_All

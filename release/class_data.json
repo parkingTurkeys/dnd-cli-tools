@@ -1,0 +1,131 @@
+[
+    {
+        "Has_Spellcasting": false,
+        "Name": "Barbarian",
+        "Hit Die": 12,
+        "Equipment": [
+            [
+                {
+                    "Amount": 1,
+                    "Weapon": "Greataxe"
+                },
+                {
+                    "Amount": 1,
+                    "Weapon": "*/martial/melee"
+                }
+            ],
+            [
+                {
+                    "Amount": 2,
+                    "Weapon": "Handaxe"
+                },
+                {
+                    "Amount": 1,
+                    "Weapon": "*/simple"
+                }
+            ],
+            {
+                "Amount": 4,
+                "Weapon": "Javelin"
+            }
+            
+        ],
+        "Inventory": [
+            {
+                "Amount": 1,
+                "Item": "Explorer's Pack"
+            }
+        ],
+        "Proficiencies": [
+            "Light Armor",
+            "Medium Armor",
+            "Shields",
+            "Simple Weapons",
+            "Martial Weapons"
+        ],
+        "Skill_Proficiencies": [
+            [
+                "Animal Handling",
+                "Athletics",
+                "Intimidation",
+                "Nature",
+                "Perception",
+                "Survival"
+            ],
+            [
+                "Animal Handling",
+                "Athletics",
+                "Intimidation",
+                "Nature",
+                "Perception",
+                "Survival"
+            ]
+        ],
+        "Saving Throws": [
+            "STR",
+            "CON"
+        ],
+        "Traits": [
+            {
+                "Name": "Rage",
+                "Description": "On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor: \nYou have advantage on Strength checks and Strength saving throws.\nWhen you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\nYou have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+            },
+            {
+                "Name":"Unarmored Defense",
+                "Description":"When you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+            }
+        ]
+    },
+    {
+        "Has_Spellcasting": true,
+        "Spells": 4,
+        "Cantrips":2,
+        "Name": "",
+        "Hit Die": 0,
+        "Equipment": [
+            [
+                {
+                    "Amount": 0,
+                    "Weapon": ""
+                },
+                {
+                    "Amount": 1,
+                    "Weapon": ""
+                }
+            ],
+            {
+                "Amount": 4,
+                "Weapon": ""
+            }
+            
+        ],
+        "Inventory": [
+            {
+                "Amount": 1,
+                "Item": ""
+            }
+        ],
+        "Proficiencies": [
+            "Light Armor"
+        ],
+        "Skill_Proficiencies": [
+            [
+                ""
+            ]
+        ],
+        "Saving Throws": [
+            "STR",
+            "CON"
+        ],
+        "Traits": [
+            {
+                "Name": "Rage",
+                "Description": "On your turn, you can enter a rage as a bonus action. While raging, you gain the following benefits if you aren't wearing heavy armor: \nYou have advantage on Strength checks and Strength saving throws.\nWhen you make a melee weapon attack using Strength, you gain a bonus to the damage roll that increases as you gain levels as a barbarian, as shown in the Rage Damage column of the Barbarian table.\nYou have resistance to bludgeoning, piercing, and slashing damage.\nIf you are able to cast spells, you can't cast them or concentrate on them while raging. Your rage lasts for 1 minute. It ends early if you are knocked unconscious or if your turn ends and you haven't attacked a hostile creature since your last turn or taken damage since then. You can also end your rage on your turn as a bonus action. Once you have raged the number of times shown for your barbarian level in the Rages column of the Barbarian table, you must finish a long rest before you can rage again."
+            },
+            {
+                "Name":"Unarmored Defense",
+                "Description":"When you are not wearing any armor, your Armor Class equals 10 + your Dexterity modifier + your Constitution modifier. You can use a shield and still gain this benefit."
+            }
+        ]
+    }
+]
