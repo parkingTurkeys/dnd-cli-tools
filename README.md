@@ -19,8 +19,12 @@ On Windows: `winget install --id Microsoft.PowerShell --source winget`
 
 Open Powershell, navigate to the directory the files are stored in, and run `.\create-monster-stat`
 
+Output will be in `output.html`
+
 ## Creating Character Sheets
 
 Not fully finished; Not all classes are supported yet
 
 Open Powershell, navigate to the directory the files are stored in, and run `.\create-character`
+
+output will be in `char_output.md`
